@@ -1,4 +1,3 @@
-
 module axi4lite_apb4_bridge #(
     parameter int ADDR_WIDTH = 32,
     parameter int DATA_WIDTH = 32
