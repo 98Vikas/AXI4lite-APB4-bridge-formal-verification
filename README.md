@@ -613,12 +613,12 @@ The project uses the following tools and languages where applicable:
 
 # 18. Repository Structure
 
-```text
-axi4lite-apb4-bridge-formal-verification/
+AXI4lite-APB4-bridge-formal-verification/
 │
 ├── README.md
 ├── LICENSE
 ├── .gitignore
+├── ENGINEERING_LOGBOOK.md
 │
 ├── docs/
 │   ├── architecture.md
@@ -630,24 +630,102 @@ axi4lite-apb4-bridge-formal-verification/
 │   └── verification_strategy.md
 │
 ├── rtl/
+│   ├── axi4lite_if.sv
+│   ├── apb4_if.sv
+│   └── axi4lite_apb4_bridge.sv
 │
-├── sva/
+├── SVA/
+│   ├── axi4lite_protocol_sva.sv
+│   ├── apb4_protocol_sva.sv
+│   ├── bridge_functional_sva.sv
+│   ├── reset_sva.sv
+│   └── bridge_bind.sv
 │
-├── formal/
-│   ├── properties/
+├── Formal/
 │   ├── assumptions/
+│   │   └── formal_reset_assumptions.sv
+│   │
 │   ├── covers/
-│   ├── scripts/
-│   └── reports/
+│   │   └── bridge_covers.sv
+│   │
+│   ├── properties/
+│   │   └── formal_property_notes.sv
+│   │
+│   ├── reports/
+│   │   └── .gitkeep
+│   │
+│   └── scripts/
+│       ├── formal_sources.f
+│       ├── formal_top.sv
+│       ├── rtl.f
+│       ├── sva.f
+│       └── run_formal.tcl
 │
 ├── tb/
+│   ├── interfaces/
+│   │   └── tb_interfaces.sv
+│   │
+│   ├── directed/
+│   │   └── bridge_smoke_tb.sv
+│   │
+│   ├── reference_model/
+│   │   └── apb_reference_model.sv
+│   │
+│   ├── tests/
+│   │   └── directed_test_list.md
+│   │
+│   └── files.f
 │
 ├── uvm/
+│   │
+│   ├── axi4lite_agent/
+│   │   ├── axi4lite_transaction.sv
+│   │   ├── axi4lite_driver.sv
+│   │   ├── axi4lite_monitor.sv
+│   │   ├── axi4lite_sequencer.sv
+│   │   └── axi4lite_agent.sv
+│   │
+│   ├── apb4_agent/
+│   │   ├── apb4_transaction.sv
+│   │   ├── apb4_driver.sv
+│   │   ├── apb4_monitor.sv
+│   │   ├── apb4_sequencer.sv
+│   │   └── apb4_agent.sv
+│   │
+│   ├── sequences/
+│   │   ├── axi_base_sequence.sv
+│   │   ├── axi_write_sequence.sv
+│   │   └── axi_read_sequence.sv
+│   │
+│   ├── scoreboard/
+│   │   └── bridge_scoreboard.sv
+│   │
+│   ├── coverage/
+│   │   └── bridge_coverage.sv
+│   │
+│   ├── environment/
+│   │   └── bridge_env.sv
+│   │
+│   ├── tests/
+│   │   ├── base_test.sv
+│   │   ├── write_test.sv
+│   │   ├── read_test.sv
+│   │   └── reset_test.sv
+│   │
+│   └── uvm_pkg.sv
 │
 ├── scripts/
+│   │
 │   ├── xcelium/
+│   │   ├── compile.f
+│   │   └── run_directed.sh
+│   │
 │   ├── jaspergold/
+│   │   └── run_formal.tcl
+│   │
 │   └── regression/
+│       ├── regression_list.txt
+│       └── run_all.sh
 │
 ├── results/
 │   ├── simulation/
@@ -655,9 +733,9 @@ axi4lite-apb4-bridge-formal-verification/
 │   ├── coverage/
 │   └── waveforms/
 │
-├── bugs/
-│
-└── ENGINEERING_LOGBOOK.md
+└── bugs/
+    ├── README.md
+    └── documented_bugs/
 ```
 
 ---
