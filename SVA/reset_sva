@@ -1,0 +1,24 @@
+
+module reset_sva #(
+    parameter int ADDR_WIDTH = 32,
+    parameter int DATA_WIDTH = 32
+) (
+    input logic aclk,
+    input logic aresetn,
+    input logic s_awready,
+    input logic s_wready,
+    input logic s_bvalid,
+    input logic s_arready,
+    input logic s_rvalid,
+    input logic psel,
+    input logic penable
+);
+
+    ap_reset_idle:
+        assert property (!aresetn |-> 
+            !s_bvalid && !s_rvalid && !psel && !penable);
+
+    ap_penable_reset:
+        assert property (!aresetn |-> !penable);
+
+endmodule
