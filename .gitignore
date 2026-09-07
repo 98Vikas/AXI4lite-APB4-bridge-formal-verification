@@ -1,0 +1,87 @@
+# -----------------------------------------------------------------------------
+
+# HDL / EDA generated files
+
+# -----------------------------------------------------------------------------
+
+# Cadence
+
+*.history
+*.log
+*.log.gz
+*.trn
+*.dsn
+*.shm
+*.vcd
+*.fsdb
+*.wlf
+
+# Xcelium
+
+xrun.history/
+xcelium.d/
+INCA_libs/
+*.key
+*.diag
+
+# JasperGold
+
+jgproject/
+jghistory/
+*.jdb
+*.jg
+*.db
+*.vcd
+*.fsdb
+
+# Simulation
+
+sim/
+work/
+waves/
+waveforms/
+transcript
+*.dump
+
+# Compilation
+
+*.o
+*.so
+*.a
+*.dll
+*.exe
+
+# Coverage
+
+coverage/
+*.ucdb
+*.vdb
+*.cov
+
+# Temporary files
+
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+.DS_Store
+
+# IDE/editor
+
+.vscode/
+.idea/
+
+# Python
+
+**pycache**/
+*.pyc
+.pytest_cache/
+
+# MATLAB
+
+*.asv
+
+# Generated reports
+
+generated_reports/
